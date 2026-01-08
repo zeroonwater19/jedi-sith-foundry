@@ -1,0 +1,41 @@
+{
+  "name": "jedi-sith",
+  "title": "Jedi & Sith Class",
+  "description": "Complete Jedi/Sith system with Force Powers, Lightsaber Forms, Midi-QOL automation, custom UI, and advanced FX.",
+  "version": "1.4.0",
+  "author": "Homebrew",
+  "systems": [
+    "dnd5e"
+  ],
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
+  "dependencies": [
+    {
+      "name": "midi-qol",
+      "type": "module"
+    },
+    {
+      "name": "dae",
+      "type": "module"
+    },
+    {
+      "name": "sequencer",
+      "type": "module"
+    },
+    {
+      "name": "jb2a_patreon",
+      "type": "module"
+    }
+  ],
+  "packs": [
+    {
+      "name": "jedi-sith",
+      "label": "Jedi & Sith",
+      "type": "Item",
+      "path": "packs/jedi-sith.db"
+    }
+  ],
+  "esmodules": [
+    "scripts/midi-force-integration.js"
+  ]
+}

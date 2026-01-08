@@ -1,0 +1,120 @@
+{
+  "optionalfeature": [
+    {
+      "name": "Battle Meditation",
+      "source": "JSW",
+      "featureType": [
+        "JSW:FP"
+      ],
+      "entries": [
+        "You and up to 3 creatures gain +2 AC, +2 to attack rolls, and temporary hit points."
+      ],
+      "consumes": {
+        "name": "Force Points",
+        "amount": 5
+      },
+      "foundrySystem": {
+        "activation": {
+          "type": "minute",
+          "cost": 10
+        },
+        "effects": [
+          {
+            "changes": [
+              {
+                "key": "system.attributes.ac.bonus",
+                "mode": "ADD",
+                "value": "2"
+              },
+              {
+                "key": "system.bonuses.mwak.attack",
+                "mode": "ADD",
+                "value": "2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Force Choke",
+      "source": "JSW",
+      "featureType": [
+        "JSW:FP"
+      ],
+      "entries": [
+        "Target makes CON save or is incapacitated and takes force damage each turn."
+      ],
+      "savingThrow": [
+        "con"
+      ],
+      "consumes": {
+        "name": "Force Points",
+        "amount": 3
+      },
+      "foundrySystem": {
+        "activation": {
+          "type": "action"
+        },
+        "save": {
+          "ability": "con",
+          "dc": "wis"
+        },
+        "damage": {
+          "parts": [
+            [
+              "1d10 + @mod",
+              "force"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "name": "Force Rage",
+      "source": "JSW",
+      "featureType": [
+        "JSW:FP"
+      ],
+      "prerequisite": [
+        {
+          "level": {
+            "class": {
+              "name": "Jedi/Sith",
+              "source": "JSW"
+            },
+            "level": 20
+          }
+        }
+      ],
+      "entries": [
+        "You channel dark emotions, gaining massive combat bonuses."
+      ],
+      "consumes": {
+        "name": "Force Points",
+        "amount": 3
+      },
+      "foundrySystem": {
+        "activation": {
+          "type": "bonus"
+        },
+        "effects": [
+          {
+            "changes": [
+              {
+                "key": "system.bonuses.mwak.damage",
+                "mode": "ADD",
+                "value": "1d6 + @prof"
+              },
+              {
+                "key": "system.attributes.movement.walk",
+                "mode": "ADD",
+                "value": "@level"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
